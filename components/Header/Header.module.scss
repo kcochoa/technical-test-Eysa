@@ -1,0 +1,21 @@
+$color-primary: #032336;
+$color-secondary: #fc9543;
+
+.header {
+  background-color: $color-primary;
+  color: #ffffff;
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #FC9543;
+  top: 0;
+}
+
+.img_logo {
+  position: relative;
+  display: block;
+  padding: 15px 40px;
+}
+
