@@ -12,25 +12,25 @@
 
 To have a better idea of the component needed and the design in general of the app. I use Figma to design some wireframe of the 3 principal pages.
 
-![image-20210308125637654](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308125637654.png)
+![image-20210308125637654](https://github.com/kcochoa/technical-test-Eysa/blob/main/public/HOME.png)
 
 
 
-![image-20210308125721975](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308125721975.png)
+![image-20210308125721975](https://github.com/kcochoa/technical-test-Eysa/blob/main/public/MOVIES.png)
 
 
 
-![image-20210308125810002](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308125810002.png)
+![image-20210308125810002](https://github.com/kcochoa/technical-test-Eysa/blob/main/public/DETAILS.png)
 
 ## Database Schema
 
 For the database I decide to use postgresSQL using Prisma to generate the schema of the database. This idea of design is due to the facilities of using Prisma to auto-generated query builder that provides type-safe access to our database and is very easy to integrated with NextJS.
 
-![image-20210308130615777](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308130615777.png)
+![image-20210308130615777](https://github.com/kcochoa/technical-test-Eysa/blob/main/public/db.png)
 
 ## Component TREE
 
-![image-20210308134747739](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308134747739.png)
+![image-20210308134747739](https://github.com/kcochoa/technical-test-Eysa/blob/main/public/components.png)
 
 ## Getting Started
 
