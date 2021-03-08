@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const { handleSubmit, register } = useForm<FormData>();
+  const classes = useStyles();
 
   const onSubmit = handleSubmit((data) => {
     if (data.username == "katia" && data.password == "secret123") {
@@ -29,7 +30,7 @@ export default function Login() {
       alert("Incorrect Credentials!");
     }
   });
-  const classes = useStyles();
+ 
 
   return (
     <Container className={classes.container} maxWidth="xs">
@@ -44,7 +45,7 @@ export default function Login() {
                   label="Username"
                   name="username"
                   size="small"
-                  variant="outlined"
+                  // variant="outlined"
                   required
                 />
               </Grid>
@@ -56,7 +57,7 @@ export default function Login() {
                   name="password"
                   size="small"
                   type="password"
-                  variant="outlined"
+                  // variant="outlined"
                   required
                 />
               </Grid>

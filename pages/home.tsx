@@ -2,7 +2,6 @@ import CategoriesList from "../components/CategoriesList";
 import Header from "../components/Header";
 import Container from "@material-ui/core/Container";
 
-
 const Home = () => {
   return (
     <>

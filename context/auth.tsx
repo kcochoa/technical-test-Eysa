@@ -1,7 +1,7 @@
 // contexts/auth.js
 
 import React, { createContext, useState, useContext, useEffect } from 'react'
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 import Router, { useRouter } from 'next/router'
 import Home from 'pages/movies';
 

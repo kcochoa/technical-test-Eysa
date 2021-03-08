@@ -1,4 +1,5 @@
 $color-primary: #032336;
+$color-light: #eeeeee;
 $color-secondary: #fc9543;
 
 .header {
@@ -11,6 +12,10 @@ $color-secondary: #fc9543;
   align-items: center;
   border-bottom: 1px solid #FC9543;
   top: 0;
+}
+
+.light{
+  background-color: $color-light,
 }
 
 .img_logo {

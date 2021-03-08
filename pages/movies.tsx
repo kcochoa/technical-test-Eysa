@@ -6,6 +6,7 @@ import MovieList from "../components/MovieList/MovieList";
 import Container from "@material-ui/core/Container";
 
 
+
 const getMovies = gql`
   query getAllMovies {
     movies {
@@ -37,8 +38,6 @@ export default function Home({data}) {
       <Container style={{ marginTop: "150px" }}>
         <MovieList movies={data.movies}></MovieList>
       </Container>
-
-      {/* <pre style={{ margin: 0 }}>{JSON.stringify(data, null, 2)}</pre> */}
     </>
   );
 }

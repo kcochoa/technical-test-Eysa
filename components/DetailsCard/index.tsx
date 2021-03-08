@@ -14,6 +14,7 @@ import Image from "next/image";
 import Divider from "@material-ui/core/Divider";
 import CommentList from "../../components/CommentList";
 import CommentForm from "../CommentForm";
+import RatingForm from "../RatingForm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -193,6 +194,7 @@ export default function DetailsCard({
                 <span key={c}>{c}, </span>
               ))}
             </Typography>
+            <RatingForm movieId={id}/>
           </CardContent>
         </div>
       </Card>

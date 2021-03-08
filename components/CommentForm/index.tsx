@@ -25,6 +25,13 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 20,
       color: "#748690",
     },
+    button:{
+      color: "#fff",
+      fontWeigth: "bold",
+      backgroundColor: "#f44336",
+      width: "100px",
+      height: "55px"
+    }
   })
 );
 
@@ -39,7 +46,6 @@ export default function CommentForm({ movieId }) {
   };
 
   const createComment = async (res) => {
-    console.log(res.content);
     const { createOneComment } = await graphcms.request(
       `
       mutation CreateComment{
@@ -69,7 +75,7 @@ export default function CommentForm({ movieId }) {
 
   return (
     <div className={classes.root}>
-      <h4 className={classes.label}>Rate and let us your opinion</h4>
+      <h4 className={classes.label}>Let us your opinion</h4>
       <form onSubmit={onSubmit}>
         <FormControl variant="outlined">
           <TextField
@@ -80,7 +86,7 @@ export default function CommentForm({ movieId }) {
             name="content"
           />
         </FormControl>
-        <Button type="submit" variant="contained" color="secondary">
+        <Button type="submit" variant="contained" color="secondary" className={classes.button}>
           ADD
         </Button>
       </form>
