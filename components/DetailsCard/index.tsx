@@ -13,7 +13,7 @@ import CurrentRating from "../CurrentRating";
 import Image from "next/image";
 import Divider from "@material-ui/core/Divider";
 import CommentList from "../../components/CommentList";
-import RatingForm from "../../components/RatingForm";
+import CommentForm from "../CommentForm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -98,7 +98,6 @@ export default function DetailsCard({
   rating_average,
   ageRange,
   duration,
-  original_language,
   comments,
   director,
   cast,
@@ -206,7 +205,7 @@ export default function DetailsCard({
         ) : (
           <p className={classes.fontDetails}>There's no comment yet</p>
         )}
-        <RatingForm />
+        <CommentForm movieId={id} />
       </div>
     </>
   );

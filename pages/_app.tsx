@@ -1,5 +1,6 @@
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "src/apollo";
+import { AuthProvider, ProtectRoute } from "../context/auth";
 import "../styles/globals.scss";
 import Head from "next/head";
 
@@ -24,7 +25,11 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
       </Head>
-      <Component {...pageProps} />
+      <AuthProvider>
+        <ProtectRoute>
+          <Component {...pageProps} />
+        </ProtectRoute>
+      </AuthProvider>
     </ApolloProvider>
   );
 }
