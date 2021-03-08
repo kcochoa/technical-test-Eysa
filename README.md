@@ -168,7 +168,7 @@ mutation CreateRating{
 
 ## Author
 
-[Katia Camila Valdés Ochoa]: https://github.com/kcochoa
+[Katia Camila Valdés Ochoa]: https://github.com/kcochoa Katia Camila Valdés Ochoa
 
 
 
