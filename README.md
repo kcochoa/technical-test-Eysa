@@ -2,7 +2,7 @@
 
  In-Flight Entertainment App to enjoy more traveling. This app was implement using NextJs with Graphql Api with Apollo Server and Prisma to use a postgress database
 
-![diagram nuevo](\diagram nuevo.png)
+![diagram nuevo](https://raw.githubusercontent.com/kcochoa/technical-test-Eysa/main/public/diagram%20nuevo.png?token=ALS2VPRH4LSNZHKBMVE6BC3AIYSY4)
 
 
 
