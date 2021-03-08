@@ -1,34 +1,174 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# In the Air 
+
+ In-Flight Entertainment App to enjoy more traveling. This app was implement using NextJs with Graphql Api with Apollo Server and Prisma to use a postgress database
+
+![diagram nuevo](F:\KATIA DIPUTACION\Prueba Tecnia Eysa\testing-prisma\public\diagram nuevo.png)
+
+
+
+## UI Design
+
+
+
+To have a better idea of the component needed and the design in general of the app. I use Figma to design some wireframe of the 3 principal pages.
+
+![image-20210308125637654](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308125637654.png)
+
+
+
+![image-20210308125721975](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308125721975.png)
+
+
+
+![image-20210308125810002](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308125810002.png)
+
+## Database Schema
+
+For the database I decide to use postgresSQL using Prisma to generate the schema of the database. This idea of design is due to the facilities of using Prisma to auto-generated query builder that provides type-safe access to our database and is very easy to integrated with NextJS.
+
+![image-20210308130615777](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308130615777.png)
+
+## Component TREE
+
+![image-20210308134747739](C:\Users\pablo\AppData\Roaming\Typora\typora-user-images\image-20210308134747739.png)
 
 ## Getting Started
 
-First, run the development server:
+To start using this app first you need to clone this repo
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/kcochoa/in-the-air-Eysa-test.git
+```
+
+Then you must execute in your terminal install the required modules
+
+```bash
+yarn install
+```
+
+In your .dev you must define your postgres database configuration,  I put a example instead of ignoring with .gitignore
+
+You also need to install globally Prisma
+
+```bash
+yarn add prisma –g
+```
+
+To install prisma client 
+
+```bash
+yarn prisma init
+```
+
+To generate migration to postgress database
+
+```bash
+yarn prisma migrate dev --preview-feature
+```
+
+If it doesn't run you must run again 
+
+```
+yarn install
+```
+
+Finally you can run your app using 
+
+```
 yarn dev
 ```
 
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[Graphql API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql). 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+Important: To login in the app you must use 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+username: katia
+password: secret123
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The user context is not finished, this is one of the most important updates that the app need protected routes.
 
-## Deploy on Vercel
+## Testing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+In term of testing I didn't have time to testing nextjs component but using graphql tools to testing endpoint I test the apis queries and mutation calls. Here are the query tested
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```javascript
+# Write your query or mutation here
+query getAllMovies{
+  movies{
+    id
+    title
+    poster_path
+    release_date
+    overview
+    rating_average
+    original_language
+    director
+    cast
+    ageRange
+    duration
+    comments{
+      id
+      content
+      username
+    }   
+  }
+}
+
+query getMovie{
+  movie(where: {id:3}){
+    id
+    title
+    poster_path
+    release_date
+    overview
+    rating_average
+    original_language
+    director
+    cast
+    ageRange
+    duration
+    comments{
+      id
+      content
+      username
+    }   
+  }
+}
+
+mutation CreateComment{
+  createOneComment(data:{content:"Que bien",movie:{connect:{id:1}},username:"katia"}){
+    id
+    content
+   
+  }
+}
+
+mutation CreateRating{
+  createOneRating(data:{username:"katia",rate:4,movie:{connect:{id:3}}}){
+    id
+    rate
+    movie{
+      id
+    }
+  }
+}
+```
+
+
+
+## Author
+
+[Katia]: https://github.com/kcochoa
+
+
+
