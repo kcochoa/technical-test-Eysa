@@ -105,7 +105,9 @@ export default function DetailsCard({
 }) {
   const classes = useStyles();
   const theme = useTheme();
+  console.log(poster_path)
   return (
+   
     <>
       <Card key={id} className={classes.root}>
         <Image

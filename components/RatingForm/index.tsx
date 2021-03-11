@@ -4,6 +4,7 @@ import { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
+import Alert from '@material-ui/lab/Alert';
 
 const graphcms = new GraphQLClient("http://localhost:3000/api/graphql");
 
@@ -13,6 +14,7 @@ export default function RatingForm({ movieId }) {
   const router = useRouter();
 
   const refreshData = () => {
+    
     router.replace(router.asPath);
   };
 
@@ -35,7 +37,9 @@ export default function RatingForm({ movieId }) {
     );
 
     if (createOneRating) {
+      <Alert severity="success">Thanks for rating!!!</Alert>
       refreshData();
+
     }
   };
 
