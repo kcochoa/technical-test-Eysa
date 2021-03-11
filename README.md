@@ -48,6 +48,30 @@ yarn install
 
 In your .dev you must define your postgres database configuration,  I put a example instead of ignoring with .gitignore
 
+```sql
+DATABASE_URL="postgresql://postgres:123456@localhost:5432/<database>?schema=public"
+```
+
+In your postgres you must restore your database with the backup that I include in the email, to have movies info
+
+**Important:** This step may not be needed due to is include in the project, but in case that have any trouble with prisma you must include this
+
+You also need to install globally Prisma
+
+```bash
+yarn add prisma –g
+```
+
+To install prisma client 
+
+```bash
+yarn prisma init
+```
+
+**Important:** Due that you restore a backup of my database you don't have to create the migration because the schema already exist. 
+
+To generate migration to postgress database
+
 You also need to install globally Prisma
 
 ```bash
